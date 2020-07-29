@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Map from './Map';
+import Map from './components/Map';
 import './style.css';
 
 const locations = [
