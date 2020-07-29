@@ -8,7 +8,9 @@ const Pin = (props) => {
     const markerRef = useRef(null);
     const { center, content, openPopup, onItemClick, itemId } = props;
     useEffect(() => {
-      if (openPopup) markerRef.current.leafletElement.openPopup();
+      if (openPopup) {
+        markerRef.current.leafletElement.openPopup();
+      }
     }, [openPopup]);
 
     const myIcon = L.divIcon({

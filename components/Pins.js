@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from "react";
 import L from 'leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'react-leaflet-markercluster/dist/styles.min.css';
@@ -26,6 +26,12 @@ const hexToRgb = (hex, opacity) => {
 const Pins = (props) => {
     //const { pins } = props;
     const { data, selectedIndex, onItemClick } = props;
+    const groupRef = useRef(null);
+
+  //   useEffect(() => {
+  //   const group = groupRef.current.leafletElement; //get leaflet.markercluster instance  
+  //   group.zoomToShowLayer()
+  // }, []);
 
     const createClusterCustomIcon = (cluster) => {
         const count = cluster.getChildCount();
@@ -83,6 +89,7 @@ const Pins = (props) => {
 
     return (
       <MarkerClusterGroup
+        ref={groupRef}
         iconCreateFunction={createClusterCustomIcon}
         showCoverageOnHover={false}
         spiderfyOnMaxZoom={true}
