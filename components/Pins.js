@@ -84,6 +84,7 @@ const Pins = (props) => {
         openPopup={selectedIndex === item.id}
         onItemClick={onItemClick}
         itemId={item.id}
+        groupRef={groupRef}
         />
     ));
 

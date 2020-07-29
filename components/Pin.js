@@ -9,7 +9,11 @@ const Pin = (props) => {
     const { center, content, openPopup, onItemClick, itemId } = props;
     useEffect(() => {
       if (openPopup) {
-        markerRef.current.leafletElement.openPopup();
+        const target = markerRef.current.leafletElement
+        
+        props.groupRef.current.leafletElement.zoomToShowLayer(target, ()=>{
+          target.openPopup();
+        });
       }
     }, [openPopup]);
 
