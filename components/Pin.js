@@ -19,7 +19,7 @@ const Pin = (props) => {
 
     const myIcon = L.divIcon({
         className: 'farm-icon',
-        html: `${icons.test}`,
+        html: openPopup ? `<span> ${icons.selected} </span>` : `<span>${icons.marker}</span>`,
         iconSize: [34, 34],
     });
 

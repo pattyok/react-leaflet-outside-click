@@ -4,3 +4,17 @@
 
 
 li { cursor: pointer; }
+
+.leaflet-marker-icon.farm-icon:after {
+    content: '';
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+    display:block;
+    height: 4px;
+    width: 20px;
+    border-radius: 100%;
+    transform: rotate(-15deg);
+    position:absolute;
+    left: 15px;
+    bottom: -12px;
+}
